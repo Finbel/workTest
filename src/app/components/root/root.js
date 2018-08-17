@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadCategory } from '../../actions/categoryActions';
+import ProductCard from '../productCard/productCard';
 import './root.scss';
 
 class Root extends Component {
@@ -14,9 +15,7 @@ class Root extends Component {
          * const { category } = this.props;
          */
         return (
-            <div className="hello-world">
-                Hello world! 👋🏻
-            </div>
+            <ProductCard/>
         );
     }
 }
