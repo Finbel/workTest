@@ -1,5 +1,9 @@
-.hello-world {
-    margin-top: 20px;
+.root {
     font-size: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2; 
+    > :first-child { 
+        margin-top: 20px; 
+    }
 }

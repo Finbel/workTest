@@ -24,12 +24,12 @@ class Root extends Component {
                         name={product.get('name')} 
                         info={product.get('shortDescription')}
                         retailerCount={product.get('retailerCount')}
-                        minPrice={product.get('localMinPrice')}
+                        minPrice={product.get('localMinPrice').get("value")}
                         stars={product.get('avgRating')}/>
                 );
         }
         return (
-            <div>
+            <div className="root">
                 {productCards}
             </div>
         );
