@@ -29,12 +29,18 @@ class ProductCard extends Component {
         return starList;
     }
 
+    fallbackSrc(ev) {
+        ev.target.src = "http://placekitten.com/60/50";
+    }
+
     render() {
 
-        const { name, info, retailerCount, minPrice, stars} = this.props;
+        const { name, imageURL, info, retailerCount, minPrice, stars} = this.props;
         return (
+            <a href="">
             <div className="product-card">
-                <img className='product-image' src="http://placekitten.com/60/50"/>
+                <img className="product-image" src={imageURL}
+                    onError={this.fallbackSrc} />
                 <div className='product-stars'>
                     <div>
                         {this.generateStars(stars)}
@@ -52,6 +58,7 @@ class ProductCard extends Component {
                     </span>
                 </div>
             </div>
+            </a>
         );
     }
 }

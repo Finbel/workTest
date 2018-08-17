@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadCategory } from '../../actions/categoryActions';
 import ProductCard from '../productCard/productCard';
+import { getProductImageLink } from '../../utils/product';
 import './root.scss';
 
 class Root extends Component {
@@ -15,12 +16,12 @@ class Root extends Component {
          * const { category } = this.props;
          */
         const { category } = this.props;
-        
         let productCards = null;
         if (category.get('products')) {
             productCards = category.get('products').toArray().map((product,i) => 
                     <ProductCard 
                         key={i}
+                        imageURL={getProductImageLink(product)}
                         name={product.get('name')} 
                         info={product.get('shortDescription')}
                         retailerCount={product.get('retailerCount')}
