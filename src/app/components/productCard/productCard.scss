@@ -37,6 +37,10 @@
     font-weight: 500;
     width:50%;
     text-align: left;
+    max-height: 35px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: wrap;
 }
 
 .consumer-info{
@@ -47,11 +51,12 @@
     margin-left: 15px;    
 }
 
-.consumer-info > .amount{
+.consumer-info .amount{
+    margin-left: 3px;
     font-size: 20px;
 }
 
-.consumer-info > .retailer-count {
-    margin-left: 5px;
+.consumer-info .retailer-count {
+    margin-left: 10px;
     font-size: 14px;
 }
