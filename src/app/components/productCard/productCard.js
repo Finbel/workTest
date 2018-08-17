@@ -20,7 +20,6 @@ class ProductCard extends Component {
     
     generateStars(stars) {
         const starSource = "https://image.flaticon.com/icons/svg/1040/1040230.svg";
-        // const starSource = "https://upload.wikimedia.org/wikipedia/commons/9/99/Star_icon_stylized.svg";
         const numStars = Math.round(parseFloat(stars,10));
         let starList = []; 
         for (var i = 1; i <= numStars; i++) {
@@ -35,29 +34,36 @@ class ProductCard extends Component {
 
     render() {
 
-        const { name, imageURL, info, retailerCount, minPrice, stars} = this.props;
+        const { name, 
+                imageURL, 
+                info, 
+                retailerCount, 
+                minPrice, 
+                stars
+            } = this.props;
+        
         return (
-            <a href="">
-            <div className="product-card">
-                <img className="product-image" src={imageURL}
-                    onError={this.fallbackSrc} />
-                <div className='product-stars'>
-                    <div>
-                        {this.generateStars(stars)}
+            <a className="product-link" href="">
+                <div className="product-card">
+                    <img className="product-image" src={imageURL}
+                        onError={this.fallbackSrc} />
+                    <div className='product-stars'>
+                        <div>
+                            {this.generateStars(stars)}
+                        </div>
+                    </div>
+                    <div className='product-name'>{this.makeEllipsis(name)}</div>
+                    <div className='consumer-info'>
+                        <span>fr. 
+                            <span className='amount'>
+                                {this.numberWithSpaces(minPrice) + " kr"}
+                            </span>
+                        </span>
+                        <span className='retailer-count'>
+                            {retailerCount} butiker
+                        </span>
                     </div>
                 </div>
-                <div className='product-name'>{this.makeEllipsis(name)}</div>
-                <div className='consumer-info'>
-                    <span>fr. 
-                        <span className='amount'>
-                            {this.numberWithSpaces(minPrice) + " kr"}
-                        </span>
-                    </span>
-                    <span className='retailer-count'>
-                        {retailerCount} butiker
-                    </span>
-                </div>
-            </div>
             </a>
         );
     }
