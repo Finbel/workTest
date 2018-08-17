@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
 import './productCard.scss';
+// import star from './star2.svg';
 
 class ProductCard extends Component {
 
-    numberWithSpaces(x) {
-        return Math.round(parseInt(x,10)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    numberWithSpaces(price) {
+        return Math.round(parseInt(price,10)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 
-    makeEllipsis(s) {
-        if (s.length > 36) {
-            const visibleName = s.substring(0,37);
+    makeEllipsis(name) {
+        if (name.length > 36) {
+            const visibleName = name.substring(0,37);
             const lastVisibleWord = visibleName.lastIndexOf(" "); 
             return visibleName.substring(0,lastVisibleWord) + " ...";
         } else {
-            return s;
+            return name;
         }
+    }
+    
+    generateStars(stars) {
+        const starSource = "https://image.flaticon.com/icons/svg/1040/1040230.svg";
+        // const starSource = "https://upload.wikimedia.org/wikipedia/commons/9/99/Star_icon_stylized.svg";
+        const numStars = Math.round(parseFloat(stars,10));
+        let starList = []; 
+        for (var i = 1; i <= numStars; i++) {
+            starList.push(<img src={starSource} key={i} height="10" width="10"/>);
+         }
+        return starList;
     }
 
     render() {
+
         const { name, info, retailerCount, minPrice, stars} = this.props;
         return (
             <div className="product-card">
                 <img className='product-image' src="http://placekitten.com/60/50"/>
-                <div className='product-stars'>{stars}</div>
+                <div className='product-stars'>
+                    <div>
+                        {this.generateStars(stars)}
+                    </div>
+                </div>
                 <div className='product-name'>{this.makeEllipsis(name)}</div>
                 <div className='consumer-info'>
                     <span>fr. 
