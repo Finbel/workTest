@@ -14,8 +14,24 @@ class Root extends Component {
          * You can get the category data from the category prop:
          * const { category } = this.props;
          */
+        const { category } = this.props;
+        
+        let productCards = null;
+        if (category.get('products')) {
+            productCards = category.get('products').toArray().map((product,i) => 
+                    <ProductCard 
+                        key={i}
+                        name={product.get('name')} 
+                        info={product.get('shortDescription')}
+                        retailerCount={product.get('retailerCount')}
+                        minPrice={product.get('localMinPrice')}
+                        stars={product.get('avgRating')}/>
+                );
+        }
         return (
-            <ProductCard/>
+            <div>
+                {productCards}
+            </div>
         );
     }
 }
