@@ -52,16 +52,19 @@ class ProductCard extends Component {
                             {this.generateStars(stars)}
                         </div>
                     </div>
-                    <div className='product-name'>{this.makeEllipsis(name)}</div>
-                    <div className='consumer-info'>
-                        <span>fr. 
-                            <span className='amount'>
-                                {this.numberWithSpaces(minPrice) + " kr"}
+                    <div className="info-container">
+                        <div className='product-name'>{this.makeEllipsis(name)}</div>
+                        <div className='product-info'>{info}</div>
+                        <div className='consumer-info'>
+                            <span>fr. 
+                                <span className='amount'>
+                                    {this.numberWithSpaces(minPrice) + " kr"}
+                                </span>
                             </span>
-                        </span>
-                        <span className='retailer-count'>
-                            {retailerCount} butiker
-                        </span>
+                            <span className='retailer-count'>
+                                {retailerCount} butiker
+                            </span>
+                        </div>
                     </div>
                 </div>
             </a>

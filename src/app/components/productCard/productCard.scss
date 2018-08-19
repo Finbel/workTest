@@ -4,13 +4,16 @@
     background-color: #FFFFFF;
     font-size: 20px;
     text-align: center;
-
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 15px;
     display:flex;
     flex-direction: column;
     flex-wrap:wrap;
     align-content: flex-start;
     border-bottom: 1px solid #e1e4e6;
     height: 100px;
+
 }
 
 .product-link{
@@ -26,7 +29,6 @@
 .product-image {
     height: 60px;
     width: 60px;
-    margin-top: 15px;
     margin-left: 15px;
 }
 
@@ -40,8 +42,14 @@
     justify-content: center;
 }
 
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
+}
+
 .product-name {
-    margin-top:10px;
     margin-left:15px;
     font-size: 15px;
     font-weight: 500;
@@ -49,15 +57,13 @@
     text-align: left;
     max-height: 35px;
     overflow:hidden;
-    text-overflow:ellipsis;
-    white-space: wrap;
 }
 
 .consumer-info{
+    display: flex;
+    align-items: center;
     font-size: 15px;
     text-align: left;
-    margin-top: auto;
-    margin-bottom: 25px;
     margin-left: 15px;    
 }
 
@@ -69,4 +75,33 @@
 .consumer-info .retailer-count {
     margin-left: 10px;
     font-size: 14px;
+}
+
+.product-info{
+    display: none;
+}
+
+
+
+// iPad
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+    .consumer-info .amount{
+        order:1;
+    }
+
+    .info-container {
+        height:100%;
+        width:100%;
+    }
+
+    .product-info{
+        display:block;
+        margin-left:15px;
+        color: #6E6E6E;
+        font-size:13px;
+        max-width: calc(100% - 200px);
+        text-align: left;
+    }
 }
