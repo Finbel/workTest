@@ -4,7 +4,7 @@ import './productStars.scss';
 class ProductStars extends Component {
 
     generateStars(stars) {
-        const starSource = 'https://image.flaticon.com/icons/svg/1040/1040230.svg';
+        const starSource = 'https://upload.wikimedia.org/wikipedia/commons/9/99/Star_icon_stylized.svg';
         const numStars = Math.round(parseFloat(stars,10));
         let starList = [];
         for (var i = 1; i <= numStars; i++) {
