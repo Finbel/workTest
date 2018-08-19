@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './productCard.scss';
 import ProductImage from '../productImage/productImage';
+import ProductStars from '../productStars/productStars';
+
 
 class ProductCard extends Component {
 
@@ -16,16 +18,6 @@ class ProductCard extends Component {
         } else {
             return name;
         }
-    }
-    
-    generateStars(stars) {
-        const starSource = "https://image.flaticon.com/icons/svg/1040/1040230.svg";
-        const numStars = Math.round(parseFloat(stars,10));
-        let starList = []; 
-        for (var i = 1; i <= numStars; i++) {
-            starList.push(<img src={starSource} key={i} height="10" width="10"/>);
-         }
-        return starList;
     }
 
     render() {
@@ -43,11 +35,7 @@ class ProductCard extends Component {
             <div className="product-card">
                 <div className='image-container'>
                     <ProductImage url={imageURL}/>
-                    <div className='product-stars'>
-                        <div>
-                            {this.generateStars(stars)}
-                        </div>
-                    </div>
+                    <ProductStars stars={stars} />
                 </div>
                 <div className="info-container">
                     <div className='product-name'>{this.makeEllipsis(name)}</div>
