@@ -20,3 +20,17 @@ Uppskattad arbetstid är cirka 8 timmar. Det är ok att lägga mer tid men redov
 #### Lycka till!
 
 -- Priceunner frontend team
+
+# Självutvärdering
+
+## Tid
+
+Jag skulle uppskatta att jag spenderade ca. tio effektiva timmar på uppgiften. Den största orsaken till att det tog mer än åtta var att jag inte tidigare arbetat ordentligt med Sass, Redux, Immutable.js och Webpack (mer än via `create-react-app`). Jag har sett alla tidigare men spenderade tid på att lära mig mer om dem för att bättre förstå uppgiften.
+
+## Förbättringar
+
+* Nästan all css är skriven i "vanilla" css och jag tror en hel del förbättringar kan göras om jag lär mig mer Sass.
+* Använde inte samma fonts som i design-bilderna. Lyckades inte identifiera vilken font Pricerunner loggan är i.
+* Använde inte samma stjärnor som i design-bilderna. Utan importerade andra liknande.
+* Hade problem med att importera svg-fil till stjärnorna. Webpack föreslog att jag behövde en `loader`, läste på och prövade lite men valde tillslut att importera stjärnorna via href.
+
