@@ -1,0 +1,67 @@
+.info-container {
+    color: #171717;   
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
+    width: calc(100% - 150px);
+}
+
+.product-name {
+    margin-left:15px;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: left;
+    overflow:hidden;
+}
+
+.consumer-info {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    text-align: left;
+    margin-left: 15px;    
+}
+
+.consumer-info .amount {
+    margin-left: 3px;
+    font-size: 20px;
+}
+
+.consumer-info .retailer-count {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.product-info {
+    display: none;
+}
+
+@media only screen 
+and (min-device-width : 768px) { 
+    .consumer-info .retailer-count{
+        order:-1;
+        margin-right:40px;
+    }
+
+    .info-container {
+        height:100%;
+        width:calc(100% - 200px);
+    }
+
+    .product-info{
+        display:block;
+        margin-left:15px;
+        color: #6E6E6E;
+        font-size:13px;
+        text-align: left;
+    }
+}
+
+@media only screen 
+and (max-device-width : 370px) { 
+    .info-container {
+        width: calc(100% - 80px);
+    }
+}

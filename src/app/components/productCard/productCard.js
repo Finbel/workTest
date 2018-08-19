@@ -2,23 +2,12 @@ import React, { Component } from 'react';
 import './productCard.scss';
 import ProductImage from '../productImage/productImage';
 import ProductStars from '../productStars/productStars';
+import ProductInfo from '../productInfo/productInfo';
+import CompareButton from '../compareButton/compareButton';
 
 
 class ProductCard extends Component {
 
-    numberWithSpaces(price) {
-        return Math.round(parseInt(price,10)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
-
-    makeEllipsis(name) {
-        if (name.length > 36) {
-            const visibleName = name.substring(0,37);
-            const lastVisibleWord = visibleName.lastIndexOf(" "); 
-            return visibleName.substring(0,lastVisibleWord) + " ...";
-        } else {
-            return name;
-        }
-    }
 
     render() {
 
@@ -37,23 +26,12 @@ class ProductCard extends Component {
                     <ProductImage url={imageURL}/>
                     <ProductStars stars={stars} />
                 </div>
-                <div className="info-container">
-                    <div className='product-name'>{this.makeEllipsis(name)}</div>
-                    <div className='product-info'>{info}</div>
-                    <div className='consumer-info'>
-                        <span>fr. 
-                            <span className='amount'>
-                                {this.numberWithSpaces(minPrice) + " kr"}
-                            </span>
-                        </span>
-                        <span className='retailer-count'>
-                            {retailerCount} butiker
-                        </span>
-                    </div>
-                </div>
-                <a className="compare-button" href={"https://pricerunner.se"+link}>
-                    Jämför pris
-                </a>
+                <ProductInfo 
+                    name={name} 
+                    info={info} 
+                    minPrice={minPrice} 
+                    retailerCount={retailerCount}/>
+                <CompareButton link={link}/>
             </div>
         );
     }
