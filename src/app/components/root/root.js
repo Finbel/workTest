@@ -18,20 +18,20 @@ class Root extends Component {
         const { category } = this.props;
         let productCards = null;
         if (category.get('products')) {
-            productCards = category.get('products').map((product,i) => 
-                    <ProductCard 
+            productCards = category.get('products').map((product,i) =>
+                    <ProductCard
                         key={i}
                         link={product.get('comparePricesLink')}
                         imageURL={getProductImageLink(product)}
-                        name={product.get('name')} 
+                        name={product.get('name')}
                         info={product.get('shortDescription')}
                         retailerCount={product.get('retailerCount')}
-                        minPrice={product.get('localMinPrice').get("value")}
-                        stars={product.get('avgRating')}/>
+                        minPrice={product.get('localMinPrice').get('value')}
+                        stars={product.get('avgRating')} />
                 );
         }
         return (
-            <div className="root">
+            <div className='root'>
                 {productCards}
             </div>
         );
