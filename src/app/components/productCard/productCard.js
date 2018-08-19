@@ -45,11 +45,13 @@ class ProductCard extends Component {
         return (
             <a className="product-link" href="">
                 <div className="product-card">
-                    <img className="product-image" src={imageURL}
-                        onError={this.fallbackSrc} />
-                    <div className='product-stars'>
-                        <div>
-                            {this.generateStars(stars)}
+                    <div className='image-container'>
+                        <img className="product-image" src={imageURL}
+                            onError={this.fallbackSrc} />
+                        <div className='product-stars'>
+                            <div>
+                                {this.generateStars(stars)}
+                            </div>
                         </div>
                     </div>
                     <div className="info-container">
@@ -66,6 +68,9 @@ class ProductCard extends Component {
                             </span>
                         </div>
                     </div>
+                    <button className="compare-button">
+                        Jämför pris
+                    </button>
                 </div>
             </a>
         );

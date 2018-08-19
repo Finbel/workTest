@@ -8,7 +8,9 @@
     padding-bottom: 15px;
     padding-top: 15px;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
     flex-wrap:wrap;
     align-content: flex-start;
     border-bottom: 1px solid #e1e4e6;
@@ -38,28 +40,34 @@
     margin-left: 15px;
     font-size: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .info-container {
     display: flex;
+    align-self: flex-start;
     flex-direction: column;
     justify-content: space-between;
     height: 60px;
+    width: calc(100% - 150px);
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .product-name {
     margin-left:15px;
     font-size: 15px;
     font-weight: 500;
-    width:50%;
     text-align: left;
     max-height: 35px;
     overflow:hidden;
 }
 
-.consumer-info{
+.consumer-info {
     display: flex;
     align-items: center;
     font-size: 15px;
@@ -67,7 +75,7 @@
     margin-left: 15px;    
 }
 
-.consumer-info .amount{
+.consumer-info .amount {
     margin-left: 3px;
     font-size: 20px;
 }
@@ -77,23 +85,24 @@
     font-size: 14px;
 }
 
-.product-info{
+.product-info {
     display: none;
 }
 
-
+.compare-button {
+    display:none;
+}
 
 // iPad
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)  { 
+and (min-device-width : 768px) { 
     .consumer-info .amount{
         order:1;
     }
 
     .info-container {
         height:100%;
-        width:100%;
+        width:calc(100% - 200px);
     }
 
     .product-info{
@@ -101,7 +110,16 @@ and (max-device-width : 1024px)  {
         margin-left:15px;
         color: #6E6E6E;
         font-size:13px;
-        max-width: calc(100% - 200px);
         text-align: left;
+    }
+
+    .compare-button {
+        display: block;
+        max-width: 125px;
+        color: #FFFFFF;
+        background-color: #2595DD;
+        border:1px solid #2A6DAB;
+        border-radius: 5px;
+        padding: 5px 10px 5px 10px;
     }
 }
