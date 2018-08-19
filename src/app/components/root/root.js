@@ -18,7 +18,7 @@ class Root extends Component {
         const { category } = this.props;
         let productCards = null;
         if (category.get('products')) {
-            productCards = category.get('products').toArray().map((product,i) => 
+            productCards = category.get('products').map((product,i) => 
                     <ProductCard 
                         key={i}
                         link={product.get('comparePricesLink')}
