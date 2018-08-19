@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './productCard.scss';
-// import star from './star2.svg';
+import ProductImage from '../productImage/productImage';
 
 class ProductCard extends Component {
 
@@ -28,10 +28,6 @@ class ProductCard extends Component {
         return starList;
     }
 
-    fallbackSrc(ev) {
-        ev.target.src = "http://placekitten.com/60/50";
-    }
-
     render() {
 
         const { name, 
@@ -44,35 +40,32 @@ class ProductCard extends Component {
             } = this.props;
         
         return (
-            <div className="product-link">
-                <div className="product-card">
-                    <div className='image-container'>
-                        <img className="product-image" src={imageURL}
-                            onError={this.fallbackSrc} />
-                        <div className='product-stars'>
-                            <div>
-                                {this.generateStars(stars)}
-                            </div>
+            <div className="product-card">
+                <div className='image-container'>
+                    <ProductImage url={imageURL}/>
+                    <div className='product-stars'>
+                        <div>
+                            {this.generateStars(stars)}
                         </div>
                     </div>
-                    <div className="info-container">
-                        <div className='product-name'>{this.makeEllipsis(name)}</div>
-                        <div className='product-info'>{info}</div>
-                        <div className='consumer-info'>
-                            <span>fr. 
-                                <span className='amount'>
-                                    {this.numberWithSpaces(minPrice) + " kr"}
-                                </span>
-                            </span>
-                            <span className='retailer-count'>
-                                {retailerCount} butiker
-                            </span>
-                        </div>
-                    </div>
-                    <a className="compare-button" href={"https://pricerunner.se"+link}>
-                        Jämför pris
-                    </a>
                 </div>
+                <div className="info-container">
+                    <div className='product-name'>{this.makeEllipsis(name)}</div>
+                    <div className='product-info'>{info}</div>
+                    <div className='consumer-info'>
+                        <span>fr. 
+                            <span className='amount'>
+                                {this.numberWithSpaces(minPrice) + " kr"}
+                            </span>
+                        </span>
+                        <span className='retailer-count'>
+                            {retailerCount} butiker
+                        </span>
+                    </div>
+                </div>
+                <a className="compare-button" href={"https://pricerunner.se"+link}>
+                    Jämför pris
+                </a>
             </div>
         );
     }
