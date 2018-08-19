@@ -8,6 +8,7 @@ export default function RootContainer() {
                 <strong className="header__pricerunner">
                     PriceRunner
                 </strong>
+                <span className="header__codetest">code test</span>
             </header>
             <div className="container">
                 <div className="content">
