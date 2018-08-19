@@ -1,10 +1,8 @@
 .product-card {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
     background-color: #FFFFFF;
     font-size: 20px;
-    text-align: center;
-    justify-content: space-between;
     padding-bottom: 15px;
     padding-top: 15px;
     display:flex;
@@ -15,11 +13,9 @@
     align-content: flex-start;
     border-bottom: 1px solid #e1e4e6;
     height: 100px;
-
 }
 
-.product-link{
-    color: #171717;    
+a { 
     text-decoration:none;
 }
 
@@ -40,9 +36,11 @@
     margin-left: 15px;
     font-size: 10px;
     display: flex;
+    justify-content: center;
 }
 
 .info-container {
+    color: #171717;   
     display: flex;
     align-self: flex-start;
     flex-direction: column;
@@ -60,10 +58,9 @@
 
 .product-name {
     margin-left:15px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     text-align: left;
-    max-height: 35px;
     overflow:hidden;
 }
 
@@ -96,8 +93,9 @@
 // iPad
 @media only screen 
 and (min-device-width : 768px) { 
-    .consumer-info .amount{
-        order:1;
+    .consumer-info .retailer-count{
+        order:-1;
+        margin-right:40px;
     }
 
     .info-container {
@@ -116,10 +114,24 @@ and (min-device-width : 768px) {
     .compare-button {
         display: block;
         max-width: 125px;
+        font-size: 15px;
         color: #FFFFFF;
         background-color: #2595DD;
         border:1px solid #2A6DAB;
         border-radius: 5px;
         padding: 5px 10px 5px 10px;
+    }
+
+    .product-card {
+        margin-bottom: 5px;
+        border-bottom: 2px solid #e1e4e6;
+        width: 738px
+    }
+}
+
+@media only screen 
+and (min-device-width : 1000px) { 
+    .product-card {
+        width: 970px
     }
 }

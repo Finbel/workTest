@@ -4,6 +4,13 @@
     flex-direction: column;
     background-color: #F2F2F2; 
     > :first-child { 
-        margin-top: 20px; 
+        margin-top: 15px; 
+    }
+}
+
+@media only screen 
+and (min-device-width : 1000px) { 
+    .root {
+        align-items: center;
     }
 }

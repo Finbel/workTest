@@ -39,11 +39,12 @@ class ProductCard extends Component {
                 info, 
                 retailerCount, 
                 minPrice, 
-                stars
+                stars,
+                link
             } = this.props;
         
         return (
-            <a className="product-link" href="">
+            <div className="product-link">
                 <div className="product-card">
                     <div className='image-container'>
                         <img className="product-image" src={imageURL}
@@ -68,11 +69,11 @@ class ProductCard extends Component {
                             </span>
                         </div>
                     </div>
-                    <button className="compare-button">
+                    <a className="compare-button" href={"https://pricerunner.se"+link}>
                         Jämför pris
-                    </button>
+                    </a>
                 </div>
-            </a>
+            </div>
         );
     }
 }

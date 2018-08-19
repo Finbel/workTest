@@ -21,6 +21,7 @@ class Root extends Component {
             productCards = category.get('products').toArray().map((product,i) => 
                     <ProductCard 
                         key={i}
+                        link={product.get('comparePricesLink')}
                         imageURL={getProductImageLink(product)}
                         name={product.get('name')} 
                         info={product.get('shortDescription')}
