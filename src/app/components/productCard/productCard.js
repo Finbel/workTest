@@ -22,7 +22,7 @@ class ProductCard extends Component {
         
         return (
             <div className="product-card">
-                <div className='image-container'>
+                <div className='image-rating-container'>
                     <ProductImage url={imageURL}/>
                     <ProductStars stars={stars} />
                 </div>
@@ -31,7 +31,9 @@ class ProductCard extends Component {
                     info={info} 
                     minPrice={minPrice} 
                     retailerCount={retailerCount}/>
-                <CompareButton link={link}/>
+                <div className="button-container">
+                    <CompareButton link={link}/>
+                </div>
             </div>
         );
     }

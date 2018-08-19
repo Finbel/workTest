@@ -1,3 +1,4 @@
+
 .compare-button {
     display:none;
 }
@@ -5,15 +6,18 @@
 // iPad
 @media only screen 
 and (min-device-width : 768px) { 
+
     .compare-button {
         display: block;
-        max-width: 125px;
-        font-size: 15px;
-        color: #FFFFFF;
+        width: 80px;
         background-color: #2595DD;
         border:1px solid #2A6DAB;
         border-radius: 5px;
         padding: 5px 10px 5px 10px;
+
+        color: #FFFFFF;
+        font-size: 15px;
+        text-align: center;
         text-decoration:none;
     }
 }

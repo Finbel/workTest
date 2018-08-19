@@ -4,7 +4,7 @@ import './productImage.scss';
 class ProductImage extends Component {
 
     fallbackSrc(ev) {
-        ev.target.src = "http://placekitten.com/60/50";
+        ev.target.src = "http://placekitten.com/75/75";
     }
 
     render() {

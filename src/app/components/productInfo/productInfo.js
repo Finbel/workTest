@@ -7,8 +7,9 @@ class ProductInfo extends Component {
     }
 
     makeEllipsis(name) {
-        if (name.length > 36) {
-            const visibleName = name.substring(0,37);
+        const limit = 50;
+        if (name.length > limit) {
+            const visibleName = name.substring(0,limit+1);
             const lastVisibleWord = visibleName.lastIndexOf(" "); 
             return visibleName.substring(0,lastVisibleWord) + " ...";
         } else {
