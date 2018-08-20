@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './compareButton.scss';
 
-class CompareButton extends Component {
-
-    render() {
-        return (
-            <a className='compare-button' href={'https://pricerunner.se'+this.props.link}>
-                Jämför pris
-            </a>);
-    }
-
+function CompareButton(props) {
+    return (
+        <a className='compare-button' href={'https://pricerunner.se'+props.link}>
+            Jämför pris
+        </a>);
 }
 
 export default CompareButton;
