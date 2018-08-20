@@ -11,10 +11,10 @@ function generateStars(stars) {
     return starList;
 }
 
-function ProductStars() {
+function ProductStars(props) {
     return (
         <div className='product-stars'>
-            {this.generateStars(this.props.stars)}
+            {generateStars(props.stars)}
         </div>
     );
 }
