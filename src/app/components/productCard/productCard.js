@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './productCard.scss';
 import ProductImage from '../productImage/productImage';
 import ProductStars from '../productStars/productStars';
@@ -73,8 +73,7 @@ class ProductCard extends Component {
                 <div className='button-container'>
                     {compareButton}
                 </div>
-            </ProductCardWrapper>
-        );
+            </ProductCardWrapper>);
     }
 }
 
