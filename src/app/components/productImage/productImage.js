@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './productImage.scss';
 
-class ProductImage extends Component {
+function fallbackSrc(ev) {
+    ev.target.src = 'http://placekitten.com/75/75';
+}
 
-    fallbackSrc(ev) {
-        ev.target.src = 'http://placekitten.com/75/75';
-    }
-
-    render() {
-        return <img className='product-image' src={this.props.url} onError={this.fallbackSrc} />;
-    }
-
+function ProductImage(props) {
+    return <img className='product-image' src={props.url} onError={fallbackSrc} />;
 }
 
 export default ProductImage;
