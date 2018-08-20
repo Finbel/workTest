@@ -34,7 +34,3 @@ Jag skulle uppskatta att jag spenderade ca. tio effektiva timmar på uppgiften. 
 * Använde inte samma stjärnor som i design-bilderna. Utan importerade andra liknande från wikimedia.
 * Hade problem med att importera svg-fil till stjärnorna. Webpack föreslog att jag behövde en `loader`, läste på och prövade lite men valde tillslut att importera stjärnorna via href.
 * Lite osäker på fallbackbild när produktbild fattas, hittade ingenting officiellt så använde bara `placekitten.com`.
-
-## TODO
-* Göra alla komponenter där det går till funktionella komponenter.
-* Göra så att hela kortet på iPhone blir en länk. 
